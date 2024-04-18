@@ -1,5 +1,6 @@
 package com.apirest.apirest01.model.bd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,6 +14,7 @@ public class Persona {
     private String apepersona;
     private int idpais;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "idpais", insertable = false, updatable = false)
     private Pais pais;

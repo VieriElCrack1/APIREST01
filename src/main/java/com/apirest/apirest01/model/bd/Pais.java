@@ -1,5 +1,6 @@
 package com.apirest.apirest01.model.bd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -15,6 +16,7 @@ public class Pais {
     private Integer idpais;
     private String nompais;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "pais")
     private List<Persona> lstPersona;
 }
